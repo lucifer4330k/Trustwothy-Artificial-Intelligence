@@ -406,7 +406,7 @@ This project was developed by:
 | **Debanjan Maji** | 2023BCS017 | Developer |
 | **Avadh Khandelwal** | 2023BMS008 | Developer |
 | **Arpit Singh** | 2023BMS002 | Developer |
-| **Musfiraa Aarif** | 2023BCS078 | Developer |
+| **Musfiraa Arif** | 2023BCS078 | Developer |
 
 ---
 
