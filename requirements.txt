@@ -1,0 +1,15 @@
+torch
+torchvision
+torchaudio
+opencv-python
+matplotlib
+seaborn
+Pillow
+numpy
+scipy
+lime
+grad-cam
+requests
+gradio
+scikit-image
+shap
