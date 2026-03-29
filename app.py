@@ -1,5 +1,11 @@
 import torch
 import torchvision.models as models
+from torchvision.models import (
+efficientnet_b0,EfficientNet_B0_Weights,
+resnet50, ResNet50_Weights, 
+vgg16, VGG16_Weights,
+mobilenet_v2, MobileNet_V2_Weights, 
+densenet121, DenseNet121_Weights)
 import requests
 import gradio as gr
 from backend import * # Import all functions from backend.py
@@ -22,28 +28,28 @@ model_zoo = {}
 
 # 1. ResNet50
 print("Loading ResNet50...")
-resnet50 = models.resnet50(pretrained=True).to(device).eval()
+resnet50 = resnet50(weights=ResNet50_Weights.DEFAULT).to(device).eval()
 model_zoo['ResNet50'] = resnet50
 
 # 2. VGG16
 print("Loading VGG16...")
-vgg16 = models.vgg16(pretrained=True).to(device).eval()
+vgg16 = vgg16(weights=VGG16_Weights.DEFAULT).to(device).eval()
 model_zoo['VGG16'] = vgg16
 
 # 3. MobileNetV2
 print("Loading MobileNetV2...")
-mobilenet = models.mobilenet_v2(pretrained=True).to(device).eval()
+mobilenet = mobilenet_v2(weights=MobileNet_V2_Weights.DEFAULT).to(device).eval()
 model_zoo['MobileNetV2'] = mobilenet
 
 # 4. DenseNet121
 print("Loading DenseNet121...")
-densenet = models.densenet121(pretrained=True).to(device).eval()
+densenet = densenet121(weights=DenseNet121_Weights.DEFAULT).to(device).eval()
 model_zoo['DenseNet121'] = densenet
 
 # 5. EfficientNet-B0
 print("Loading EfficientNet-B0...")
 try:
-    efficientnet = models.efficientnet_b0(pretrained=True).to(device).eval()
+    efficientnet = efficientnet_b0(weights=EfficientNet_B0_Weights.DEFAULT).to(device).eval()
     model_zoo['EfficientNet-B0'] = efficientnet
 except Exception as e:
     print(f"Could not load EfficientNet-B0, skipping: {e}")
